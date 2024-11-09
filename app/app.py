@@ -1,6 +1,7 @@
 from flask import Flask,request, jsonify
 from PIL import Image
 from modelUse import generate_palette
+from picturePalette import generate_palette_from_image
 
 app = Flask(__name__)
 
@@ -17,7 +18,7 @@ def upload_file():
     file = request.files['file']
     try:
         image = Image.open(file.stream)
-        return ["000000", "000000", "000000", "000000", "000000"]
+        return generate_palette_from_image(image)
     except Exception as e:
         return []
     

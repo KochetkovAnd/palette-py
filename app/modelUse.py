@@ -4,7 +4,7 @@ from tensorflow.keras.models import load_model
 
 
 def rgb_to_hex(rgb):
-    return "{:02x}{:02x}{:02x}".format(rgb[0], rgb[1], rgb[2])
+    return "{:02X}{:02X}{:02X}".format(rgb[0], rgb[1], rgb[2])
 
 def convertToRoleColor(colors):
     roleColors = []
